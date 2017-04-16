@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#1296db"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+    <TextView
+        android:id="@+id/setting"
+        android:layout_marginTop="30dp"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="#ffffffff"
+        android:text="设置"/>
+    <View
+        android:layout_marginTop="25dp"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="match_parent" />
+    <ImageView
+        android:id="@+id/message"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:src="@drawable/message"/>
+
+    <ImageView
+        android:id="@+id/message2"
+        android:visibility="gone"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:src="@drawable/message2"/>
+
+
+
+</LinearLayout>
