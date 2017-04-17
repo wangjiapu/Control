@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.com.control.Adapters.MyRecyclerViewAdapter;
 import com.example.com.control.R;
 
 /**
@@ -13,10 +14,21 @@ import com.example.com.control.R;
 public class ViewHplder_two extends RecyclerView.ViewHolder {
     public ImageView goods_img_two;
     public TextView goods_nm_two;
-    public ViewHplder_two(View itemView) {
+    private MyRecyclerViewAdapter.OnRecyclerViewItemClickListener
+            mOnItemClickListener=null;
+    public ViewHplder_two(View itemView,
+                          final MyRecyclerViewAdapter.OnRecyclerViewItemClickListener
+            mOnItemClickListener) {
         super(itemView);
-
         goods_img_two=(ImageView)itemView.findViewById(R.id.goods_img_two);
         goods_nm_two=(TextView)itemView.findViewById(R.id.goods_nm_two);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mOnItemClickListener!=null){
+                    mOnItemClickListener.onItemClick(v,getPosition());
+                }
+            }
+        });
     }
 }

@@ -105,7 +105,16 @@ public class MarketFrament extends Fragment {
             }
         });
 
-
+       radapter.setRecyclerViewOnItemClickListener(new MyRecyclerViewAdapter.OnRecyclerViewItemClickListener() {
+           @Override
+           public void onItemClick(View view, int pos) {
+               /**
+                * recycler view的点击事件
+                * 执行以后是物品的详细信息
+                */
+               Toast.makeText(getContext(),pos+"",Toast.LENGTH_SHORT).show();
+           }
+       });
 
     }
 

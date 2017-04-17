@@ -36,15 +36,15 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         switch (viewType){
             case 0:
                 view= LayoutInflater.from(context).inflate(R.layout.holder_lauout_match,null);
-                holder=new ViewHplder_match(view);
+                holder=new ViewHplder_match(view,mOnItemClickListener);
                 break;
             case 1:
                 view=LayoutInflater.from(context).inflate(R.layout.holder_lauout_two,null);
-                holder=new ViewHplder_two(view);
+                holder=new ViewHplder_two(view,mOnItemClickListener);
                 break;
             case 2:
                 view=LayoutInflater.from(context).inflate(R.layout.holder_lauout_four,null);
-                holder=new ViewHplder_four(view);
+                holder=new ViewHplder_four(view,mOnItemClickListener);
                 break;
         }
 
@@ -97,13 +97,11 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.Vie
     private OnRecyclerViewItemClickListener mOnItemClickListener=null;
 
 
-
-
-    public static interface OnRecyclerViewItemClickListener{
+    public interface OnRecyclerViewItemClickListener{
         void onItemClick(View view , int pos);
     }
 
-    public void setOnItemClickListener(OnRecyclerViewItemClickListener listener) {
+    public void setRecyclerViewOnItemClickListener(OnRecyclerViewItemClickListener listener) {
         this.mOnItemClickListener = listener;
     }
 }
