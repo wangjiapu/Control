@@ -2,82 +2,52 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#95d1f1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+
     <include layout="@layout/hometitle_layout" />
+  <android.support.design.widget.CoordinatorLayout
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1">
+      <android.support.design.widget.AppBarLayout
+          android:layout_width="match_parent"
+          android:background="#b0b1b1"
+          android:layout_height="222dp">
 
-    <ScrollView
+          <android.support.design.widget.CollapsingToolbarLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              app:contentScrim="?attr/colorPrimary"
+              app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <include layout="@layout/home3d_lunbo"/>
+              
+          </android.support.design.widget.CollapsingToolbarLayout>
+
+          <include
+              android:id="@+id/homelayoutlabelid"
+              layout="@layout/homelayout_label" />
+
+      </android.support.design.widget.AppBarLayout>
+      <android.support.v4.widget.NestedScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_behavior="@string/appbar_scrolling_view_behavior">
+          <android.support.v7.widget.RecyclerView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/home_recyclerview">
+
+          </android.support.v7.widget.RecyclerView>
+      </android.support.v4.widget.NestedScrollView>
+
+
+  </android.support.design.widget.CoordinatorLayout>
+    <View
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <com.example.com.control.Views.Carousel3DSwitchView
-                android:id="@+id/image_switch_view"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:background="#95d1f1">
-
-                <com.example.com.control.Views.Carousel3DView
-                    android:id="@+id/image1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/imag1" />
-
-                <com.example.com.control.Views.Carousel3DView
-                    android:id="@+id/image2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/imag2" />
-
-                <com.example.com.control.Views.Carousel3DView
-                    android:id="@+id/image3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/imag3" />
-
-                <com.example.com.control.Views.Carousel3DView
-                    android:id="@+id/image4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/imag5" />
-
-                <com.example.com.control.Views.Carousel3DView
-                    android:id="@+id/image5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/imag6" />
-
-                <com.example.com.control.Views.Carousel3DView
-                    android:id="@+id/image6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/imag7" />
-
-                <com.example.com.control.Views.Carousel3DView
-                    android:id="@+id/image7"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/imag8" />
-            </com.example.com.control.Views.Carousel3DSwitchView>
-
-            <include
-                android:id="@+id/homelayoutlabelid"
-                layout="@layout/homelayout_label" />
-
-
-        </RelativeLayout>
-    </ScrollView>
-
-
+        android:layout_height="50dp"
+        android:background="#ffffffff"/>
 </LinearLayout>

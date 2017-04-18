@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+    <com.example.com.control.Views.Carousel3DSwitchView
+        android:id="@+id/image_switch_view"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#95d1f1">
+
+        <com.example.com.control.Views.Carousel3DView
+            android:id="@+id/image1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/imag1" />
+
+        <com.example.com.control.Views.Carousel3DView
+            android:id="@+id/image2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/imag2" />
+
+        <com.example.com.control.Views.Carousel3DView
+            android:id="@+id/image3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/imag3" />
+
+        <com.example.com.control.Views.Carousel3DView
+            android:id="@+id/image4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/imag5" />
+
+        <com.example.com.control.Views.Carousel3DView
+            android:id="@+id/image5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/imag6" />
+
+        <com.example.com.control.Views.Carousel3DView
+            android:id="@+id/image6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/imag7" />
+
+        <com.example.com.control.Views.Carousel3DView
+            android:id="@+id/image7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/imag8" />
+    </com.example.com.control.Views.Carousel3DSwitchView>
+
+</RelativeLayout>

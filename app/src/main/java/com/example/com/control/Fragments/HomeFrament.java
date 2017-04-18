@@ -5,14 +5,20 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.com.control.Adapters.HomeRecyclerViewAdapter;
 import com.example.com.control.R;
 import com.example.com.control.Views.Carousel3DSwitchView;
+import com.example.com.control.bean.Houses;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -24,6 +30,10 @@ public class HomeFrament extends Fragment {
     private static final Integer START=1;
     private Carousel3DSwitchView carousel3DSwitchView;
     private Timer timer=new Timer();//初始话定时器  方便轮播图；
+
+    private RecyclerView homeRecyclerView;
+    private List<Houses> housesList;
+    private HomeRecyclerViewAdapter madapter;
 
 
     private Handler mhandler=new Handler(){
@@ -42,8 +52,34 @@ public class HomeFrament extends Fragment {
         View view= inflater.inflate(R.layout.homelayout,container,false);
 
         initView(view);
+        initDate();
         initEvent(view);
         return view;
+    }
+
+    private void initDate() {
+        housesList=new ArrayList<>();
+        for(int i=0;i<100;i++){
+            /**
+             * 初始化数据，从服务器获取
+             */
+            Houses temp=new Houses();
+            if(i%3==1){
+                temp.setHouse_img(getResources().getDrawable(R.drawable.imag1));
+            }
+            if(i%3==2){
+                temp.setHouse_img(getResources().getDrawable(R.drawable.imag2));
+            }else {
+                temp.setHouse_img(getResources().getDrawable(R.drawable.imag3));
+            }
+            temp.setDescribe("好房子就是我，我就是好房子");
+            housesList.add(temp);
+        }
+        GridLayoutManager gm=new GridLayoutManager(getContext(),2);
+        homeRecyclerView.setLayoutManager(gm);
+        madapter=new HomeRecyclerViewAdapter(getContext(),housesList);
+        homeRecyclerView.setAdapter(madapter);
+
     }
 
     private void initEvent(View view) {
@@ -77,5 +113,7 @@ public class HomeFrament extends Fragment {
                 mhandler.sendMessage(message);
             }
         },2000,6000);
+
+        homeRecyclerView=(RecyclerView)view.findViewById(R.id.home_recyclerview);
     }
 }

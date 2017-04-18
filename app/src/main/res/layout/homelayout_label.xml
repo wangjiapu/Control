@@ -1,113 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:background="#e9e8e8"
-    android:layout_below="@id/image_switch_view"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="100dp"
+   android:background="#b0b1b1"
+    android:layout_below="@id/image_switch_view">
     <LinearLayout
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="热门"/>
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="促销"/>
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="最近"/>
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="预购"/>
-    </LinearLayout>
+        android:layout_height="match_parent"
+        android:background="@drawable/homelayout_label_bg"
+        android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="最美"/>
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="热门"
+                android:textColor="#898888" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="促销"
+                android:textColor="#898888" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="最近"
+                android:textColor="#898888" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="预购"
+                android:textColor="#898888" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="便利"/>
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="郊区"/>
-        <Button
-            android:background="@drawable/homelabel_bg"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginRight="13dp"
-            android:layout_width="0dp"
-            android:textColor="#898888"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="市区"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="最美"
+                android:textColor="#898888" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="便利"
+                android:textColor="#898888" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="郊区"
+                android:textColor="#898888" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/homelabel_bg"
+                android:text="市区"
+                android:textColor="#898888" />
+        </LinearLayout>
+
     </LinearLayout>
 </LinearLayout>
