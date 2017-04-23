@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
 
 import com.example.com.control.Fragments.Fragments_Me.Bill_Fragment_Me;
@@ -29,6 +30,8 @@ public class Me_MoreContext extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
         setContentView(R.layout.tome_morecontent);
 
         initview();

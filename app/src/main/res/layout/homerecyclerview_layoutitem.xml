@@ -3,13 +3,16 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:background="#ffffff"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
     android:layout_height="150dp">
     <ImageView
         android:id="@+id/home_review_item_img"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:src="@drawable/markat_back"
+        android:src="@drawable/temp"
         android:scaleType="centerCrop"/>
     <TextView
         android:id="@+id/home_review_item_tv"
