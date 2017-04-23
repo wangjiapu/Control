@@ -34,7 +34,6 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         HomeViewHolder holder1=(HomeViewHolder) holder;
-       // holder1.home_review_item_img.setImageDrawable(mlist.get(position).getHouse_img());
         holder1.home_review_item_tv.setText(mlist.get(position).getDescribe());
     }
 
