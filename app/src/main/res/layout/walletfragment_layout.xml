@@ -1,13 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:gravity="center"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="钱包"/>
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="#1296db"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/wallet_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="33dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="1"
+                android:src="@drawable/fanhui" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:text="我的"
+                android:textSize="16sp"
+                android:textColor="#ffffff" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="18dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="账单"
+            android:textColor="#ffffff"
+            android:textSize="23sp" />
+
+        <TextView
+            android:onClick="onClick"
+            android:id="@+id/mingxi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="明细"
+            android:textSize="16sp"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="余额账户（元）"
+        android:background="#1296db"
+        android:gravity="bottom"
+        android:textColor="#dcdada"/>
+
+    <TextView
+        android:paddingLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:text="123.321"
+        android:background="#1296db"
+        android:textSize="40sp"
+        android:gravity="center_vertical"
+        android:textColor="#ffffff"/>
+    <View
+        android:layout_width="wrap_content"
+        android:background="#a4a4a4"
+        android:layout_height="1px" />
+    <LinearLayout
+        android:onClick="onClick"
+        android:id="@+id/chongzhi"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffffff"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/recharge" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="7"
+            android:gravity="center_vertical"
+            android:text="充值"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/zouqi" />
+    </LinearLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:background="#a4a4a4"
+        android:layout_height="1px" />
+    <LinearLayout
+        android:onClick="onClick"
+        android:id="@+id/tixian"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffffff"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/deposit" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_weight="7"
+            android:gravity="center_vertical"
+            android:text="提现"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/zouqi" />
+    </LinearLayout>
+    <View
+        android:layout_width="wrap_content"
+        android:background="#a4a4a4"
+        android:layout_height="1px" />
 </LinearLayout>

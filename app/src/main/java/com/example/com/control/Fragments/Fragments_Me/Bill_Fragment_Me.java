@@ -51,7 +51,7 @@ public class Bill_Fragment_Me extends Fragment {
             Billinfo temp=new Billinfo();
             temp.setTime("2017年4月");
            if(i%3==0||i%5==0){
-               temp.setValue((float) -12.3);temp.setDoing("**转账给你**元");
+               temp.setValue((float) -12.3);temp.setDoing("转出**元");
            }
            else{
                temp.setValue((float) 33.0); temp.setDoing("**给你转账**元");
