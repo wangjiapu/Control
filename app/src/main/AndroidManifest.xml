@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".MainActivity">
+        <activity android:name=".OpenAppActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".MeSetting"/>
         <activity android:name=".Me_MoreContext"/><!--关于我的里面的一些处理事件都将放如次活动解决-->
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>
