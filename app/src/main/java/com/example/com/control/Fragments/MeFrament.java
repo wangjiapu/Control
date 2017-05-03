@@ -92,6 +92,18 @@ public class MeFrament extends Fragment{
                 case R.id.message:
                     Toast.makeText(getContext(),"消息没有来",Toast.LENGTH_SHORT).show();
                     break;
+                case R.id.inviet:
+
+                    /**
+                     * 实现分享功能，分享我们的app给好友
+                     */
+                    Intent intent_share=new Intent(Intent.ACTION_SEND);
+                    intent_share.setType("image/*");
+                    intent_share.putExtra(Intent.EXTRA_SUBJECT, "Share");
+                    intent_share.putExtra(Intent.EXTRA_TEXT, "掌空app是一个很好的应用，你可以试试");
+                    intent_share.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(Intent.createChooser(intent_share,"掌空app" ));
+                    break;
                 default:
                     Intent intent=new Intent(getContext(),Me_MoreContext.class);
                     switch (v.getId()){
@@ -110,9 +122,9 @@ public class MeFrament extends Fragment{
                         case R.id.friend:
                             intent.putExtra("content","friend");
                             break;
-                        case R.id.inviet:
+                       /* case R.id.inviet:
                             intent.putExtra("content","inviet");
-                            break;
+                            break;*/
 
                     }
                     getContext().startActivity(intent);

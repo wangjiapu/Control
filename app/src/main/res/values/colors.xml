@@ -5,4 +5,8 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colormenu">#8a8a8a</color>
     <color name="colormenu_select">#1296db</color>
+    <color name="label_bg_yes">#f56e6e</color>
+    <color name="label_bg_no">#898888</color>
+    <color name="WHITE">#ffffff</color>
+    <color name="wu">#e0000000</color>
 </resources>

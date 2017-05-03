@@ -11,7 +11,6 @@ import android.widget.FrameLayout;
 
 import com.example.com.control.Fragments.Fragments_Me.Bill_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Friend_Fragment_Me;
-import com.example.com.control.Fragments.Fragments_Me.Inviet_Frament_Me;
 import com.example.com.control.Fragments.Fragments_Me.Mydesign_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Publish_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Wallet_Fragment_Me;
@@ -26,7 +25,7 @@ public class Me_MoreContext extends FragmentActivity {
     private Fragment mfm;
     private Fragment pfm;
     private Fragment ffm;
-    private Fragment ifm;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +46,7 @@ public class Me_MoreContext extends FragmentActivity {
                 break;
             case "friend":selectFragment(4);
                 break;
-            case "inviet":selectFragment(5);
-                break;
+
 
         }
     }
@@ -103,14 +101,7 @@ public class Me_MoreContext extends FragmentActivity {
                     transaction.show(ffm);
                 }
                 break;
-            case 5:
-                if (ifm == null) {
-                    ifm = new Inviet_Frament_Me();
-                    transaction.add(R.id.form_me_content, ifm);
-                } else {
-                    transaction.show(ifm);
-                }
-                break;
+
         }
        transaction.commit();
     }
@@ -131,8 +122,6 @@ public class Me_MoreContext extends FragmentActivity {
         if(ffm!=null){
             transaction.hide(ffm);
         }
-        if(ifm!=null){
-            transaction.hide(ifm);
-        }
+
     }
 }
