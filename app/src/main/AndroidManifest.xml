@@ -19,5 +19,8 @@
         <activity android:name=".Me_MoreContext"/><!--关于我的里面的一些处理事件都将放如次活动解决-->
         <activity android:name=".MainActivity"/>
     </application>
+    <!--网络权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

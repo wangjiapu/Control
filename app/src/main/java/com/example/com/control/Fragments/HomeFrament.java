@@ -164,6 +164,12 @@ public class HomeFrament extends Fragment{
                     hide_coler();
                     label_hot.setBackground(getResources().getDrawable(R.drawable.homelabel_bgcolor2));
                     label_hot.setTextColor(getResources().getColor(R.color.WHITE));
+
+                    /**
+                     * 执行点击刷新页面
+                     *
+                     */
+                    Toast.makeText(getContext(), "最热",Toast.LENGTH_SHORT).show();
                     break;
                 case R.id.discount:
                     hide_coler();

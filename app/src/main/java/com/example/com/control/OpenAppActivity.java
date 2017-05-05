@@ -12,6 +12,9 @@ import android.support.annotation.Nullable;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import com.example.com.control.Utils.NetworkUtil;
+import com.yalantis.contextmenu.lib.Utils;
+
 
 public class OpenAppActivity extends Activity {
     private ImageView open;
@@ -19,10 +22,7 @@ public class OpenAppActivity extends Activity {
     private Handler mHandler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
-            if (msg.what==1){
-                Intent intent=new Intent(OpenAppActivity.this,MainActivity.class);
-                OpenAppActivity.this.startActivity(intent);
-            }
+
         }
     };
     @Override
@@ -33,6 +33,23 @@ public class OpenAppActivity extends Activity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
 
         setContentView(R.layout.layout_openapp);
+        if (NetworkUtil.isNetworkConnection(getApplicationContext())){
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    Message message=new Message();
+
+                    /**
+                     * 获取服务器数据
+                     */
+
+                }
+            }).start();
+        }else{
+            loadData();
+        }
+
+
 
         open=(ImageView)findViewById(R.id.open);
         AnimatorSet animator=new AnimatorSet();
@@ -41,20 +58,44 @@ public class OpenAppActivity extends Activity {
         ObjectAnimator objectAnimator2=ObjectAnimator.ofFloat(open,"scaleY",1f,1.1f);
         animator.setDuration(2000);
         animator.play(objectAnimator).with(objectAnimator1).with(objectAnimator2);
-        animator.start();
-        new Thread(new Runnable() {
+        objectAnimator.addListener(new Animator.AnimatorListener() {
             @Override
-            public void run() {
-                Message message=new Message();
-                try {
-                    Thread.sleep(2000);
-                    message.what=1;
-                    mHandler.sendMessage(message);
+            public void onAnimationStart(Animator animator) {
 
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
             }
-        }).start();
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+             Intent intent=new Intent(OpenAppActivity.this,MainActivity.class);
+                OpenAppActivity.this.startActivity(intent);
+                onDestroy();
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
+        });
+        animator.start();
+    }
+
+    /**
+     * 加载上次浏览时存储在手机中的数据
+     */
+    private void loadData() {
+        
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        finish();
     }
 }
