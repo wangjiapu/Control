@@ -1,15 +1,17 @@
 package com.example.com.control.bean;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
 
 
 public class Houses {
-    private Drawable house_img;
+    private String house_imgURL;
     private String describe;
 
-    public Drawable getHouse_img() {
-        return house_img;
+    public String getHouse_img() {
+        return house_imgURL;
     }
 
     public String getDescribe() {
@@ -20,7 +22,7 @@ public class Houses {
         this.describe = describe;
     }
 
-    public void setHouse_img(Drawable house_img) {
-        this.house_img = house_img;
+    public void setHouse_img(String house_img) {
+        this.house_imgURL = house_img;
     }
 }

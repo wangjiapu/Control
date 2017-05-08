@@ -17,11 +17,14 @@ import com.example.com.control.Adapters.HomeRecyclerViewAdapter;
 import com.example.com.control.R;
 import com.example.com.control.Views.Carousel3DSwitchView;
 import com.example.com.control.bean.Houses;
+import com.example.com.control.bean.Lists;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import static com.example.com.control.bean.Lists.housesList;
 
 /**
  * Created by 蒲家旺 on 2017/4/11.
@@ -33,7 +36,7 @@ public class HomeFrament extends Fragment{
     private Timer timer=new Timer();//初始话定时器  方便轮播图；
 
     private RecyclerView homeRecyclerView;
-    private List<Houses> housesList;
+
     private HomeRecyclerViewAdapter madapter;
 
 
@@ -77,27 +80,19 @@ public class HomeFrament extends Fragment{
     }
 
     private void initDate() {
-        housesList=new ArrayList<>();
-        for(int i=0;i<100;i++){
-            /**
-             * 初始化数据，从服务器获取
-             */
-            Houses temp=new Houses();
-            if(i%3==1){
-                temp.setHouse_img(getResources().getDrawable(R.drawable.imag1));
-            }
-            if(i%3==2){
-                temp.setHouse_img(getResources().getDrawable(R.drawable.imag2));
-            }else {
-                temp.setHouse_img(getResources().getDrawable(R.drawable.imag3));
-            }
-            temp.setDescribe("好房子就是我，我就是好房子");
-            housesList.add(temp);
-        }
+
         GridLayoutManager gm=new GridLayoutManager(getContext(),2);
         homeRecyclerView.setLayoutManager(gm);
-        madapter=new HomeRecyclerViewAdapter(getContext(),housesList);
+        madapter=new HomeRecyclerViewAdapter(getContext(), Lists.housesList);
         homeRecyclerView.setAdapter(madapter);
+        
+        madapter.setHomeRecyclerViewOnItemClickListener(new HomeRecyclerViewAdapter.
+                OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View view, int pos) {
+                Toast.makeText(getContext(), pos + "", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -153,7 +148,6 @@ public class HomeFrament extends Fragment{
         },2000,6000);
 
         homeRecyclerView=(RecyclerView)view.findViewById(R.id.home_recyclerview);
-
     }
 
     class MyonClick implements View.OnClickListener{
