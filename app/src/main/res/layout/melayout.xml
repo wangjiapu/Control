@@ -6,8 +6,34 @@
     android:orientation="vertical">
 
     <include layout="@layout/metitle_layout" />
+    <LinearLayout
+        android:id="@+id/nologin"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="#1296db"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:paddingTop="20dp"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+           android:paddingBottom="10dp"
+            android:src="@drawable/outlogin"/>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="未登录"
+            android:textSize="18sp"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"/>
+
+    </LinearLayout>
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/person"
         android:layout_width="match_parent"
         android:layout_height="100dp"

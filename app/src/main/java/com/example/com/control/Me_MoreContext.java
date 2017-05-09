@@ -11,6 +11,7 @@ import android.widget.FrameLayout;
 
 import com.example.com.control.Fragments.Fragments_Me.Bill_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Friend_Fragment_Me;
+import com.example.com.control.Fragments.Fragments_Me.Login_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Mydesign_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Publish_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Wallet_Fragment_Me;
@@ -25,6 +26,7 @@ public class Me_MoreContext extends FragmentActivity {
     private Fragment mfm;
     private Fragment pfm;
     private Fragment ffm;
+    private Fragment lfm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class Me_MoreContext extends FragmentActivity {
             case "publish":selectFragment(3);
                 break;
             case "friend":selectFragment(4);
+                break;
+            case "login":selectFragment(5);
                 break;
 
 
@@ -101,6 +105,14 @@ public class Me_MoreContext extends FragmentActivity {
                     transaction.show(ffm);
                 }
                 break;
+            case 5:
+                if (lfm == null) {
+                    lfm = new Login_Fragment_Me();
+                    transaction.add(R.id.form_me_content, lfm);
+                } else {
+                    transaction.show(lfm);
+                }
+                break;
 
         }
        transaction.commit();
@@ -121,6 +133,9 @@ public class Me_MoreContext extends FragmentActivity {
         }
         if(ffm!=null){
             transaction.hide(ffm);
+        }
+        if(lfm!=null){
+            transaction.hide(lfm);
         }
 
     }

@@ -85,7 +85,7 @@ public class HomeFrament extends Fragment{
         homeRecyclerView.setLayoutManager(gm);
         madapter=new HomeRecyclerViewAdapter(getContext(), Lists.housesList);
         homeRecyclerView.setAdapter(madapter);
-        
+
         madapter.setHomeRecyclerViewOnItemClickListener(new HomeRecyclerViewAdapter.
                 OnRecyclerViewItemClickListener() {
             @Override

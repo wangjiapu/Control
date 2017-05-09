@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@drawable/pjw"
+    android:layout_height="match_parent">
+
+    <com.example.com.control.Views.fullScreen
+        android:id="@+id/videoview"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="match_parent"
+        android:focusable="false"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:drawableLeft="@drawable/shou"
+            android:layout_width="match_parent"
+            android:paddingTop="120dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="215dp"
+            android:text="掌空"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:gravity="center"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="账号"
+            android:textColorHint="#e062c5f2"
+            android:background="@null"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+        <View
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#e0ffffff"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+        <EditText
+            android:hint="密码"
+            android:textColorHint="#e062c5f2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@null"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+        <View
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#e0ffffff"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+        <Button
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="登录"
+            android:background="@drawable/loginbg"
+            android:textColor="#ffffff"/>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="忘记密码？"
+                android:textColor="#e062c5f2"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:text="新用户注册"
+                android:gravity="right"
+                android:textColor="#e062c5f2"/>
+        </LinearLayout>
+
+       <TextView
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:gravity="bottom|center"
+           android:text="西安邮电大学移动应用开发实验室"
+           android:textColor="#ffffff"/>
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

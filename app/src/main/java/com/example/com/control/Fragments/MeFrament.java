@@ -29,6 +29,7 @@ public class MeFrament extends Fragment{
     private ImageView message,message2;
 
     private LinearLayout bill,wallet,mydesign,publish,friend,inviet;
+    private LinearLayout login;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -48,6 +49,7 @@ public class MeFrament extends Fragment{
         publish.setOnClickListener(new onClickEvent());
         friend.setOnClickListener(new onClickEvent());
         inviet.setOnClickListener(new onClickEvent());
+        login.setOnClickListener(new onClickEvent());
     }
 
     private void init_Me_View(View view) {
@@ -62,6 +64,8 @@ public class MeFrament extends Fragment{
         publish=(LinearLayout)view.findViewById(R.id.publish);//我的发布
         friend=(LinearLayout)view.findViewById(R.id.friend);//我的关注
         inviet=(LinearLayout)view.findViewById(R.id.inviet);//邀请好友
+
+        login=(LinearLayout)view.findViewById(R.id.nologin);//登录
     }
 
 
@@ -122,9 +126,9 @@ public class MeFrament extends Fragment{
                         case R.id.friend:
                             intent.putExtra("content","friend");
                             break;
-                       /* case R.id.inviet:
-                            intent.putExtra("content","inviet");
-                            break;*/
+                        case R.id.nologin:
+                            intent.putExtra("content","login");
+                            break;
 
                     }
                     getContext().startActivity(intent);
