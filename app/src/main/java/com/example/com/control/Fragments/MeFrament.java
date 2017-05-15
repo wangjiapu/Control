@@ -1,8 +1,14 @@
 package com.example.com.control.Fragments;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -23,19 +29,79 @@ import com.example.com.control.R;
  *
  */
 public class MeFrament extends Fragment{
-
+    private static final String MEFRAMENT="REGISTERBORAD";
+    private String user="";
+    private String password="";
     private TextView setting_tv;
     private TextView outlogin;
     private ImageView message,message2;
 
+    private TextView myname,mynum;
+
     private LinearLayout bill,wallet,mydesign,publish,friend,inviet;
-    private LinearLayout login;
+    private LinearLayout login;//用户未登录时的界面呈现效果
+    private LinearLayout person;//用户登录成功时的界面呈现效果
+
+    private Handler mHandler=new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            switch (msg.what){
+                case 1:
+                    download_data();
+                    break;
+            }
+        }
+
+    };
+
+    private BroadcastReceiver mBroadcastReceiver=new BroadcastReceiver(){
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action=intent.getStringExtra("result");
+            if(action.equals("跟新ui")){
+                //发送handler
+                Message m=new Message();
+                m.what=1;
+                mHandler.sendMessage(m);
+            }else{
+                //不更新
+            }
+        }
+    };
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.melayout,container,false);
         init_Me_View(view);
+        registerBoradcastReceiver();//注册广播
+        download_data();//加载用户信息；
         return view;
+    }
+
+
+
+    private void download_data() {
+        SharedPreferences pref=getActivity()
+                .getSharedPreferences("userData",Context.MODE_PRIVATE);
+           user=pref.getString("username","");
+        password=pref.getString("password","");
+        Log.e("password",password);
+        if(user.equals("")||password.equals("")){
+            login.setVisibility(View.VISIBLE);
+            person.setVisibility(View.GONE);
+        }else{
+            myname.setText(user);
+            mynum.setText(String.valueOf("账号："+password));
+            person.setVisibility(View.VISIBLE);
+            login.setVisibility(View.GONE);
+        }
+    }
+
+    private void registerBoradcastReceiver() {
+        IntentFilter mIntentFilter=new IntentFilter();
+        mIntentFilter.addAction(MEFRAMENT);
+        getActivity().registerReceiver(mBroadcastReceiver,mIntentFilter);//注册
     }
 
     private void init_Me_Event() {
@@ -50,11 +116,14 @@ public class MeFrament extends Fragment{
         friend.setOnClickListener(new onClickEvent());
         inviet.setOnClickListener(new onClickEvent());
         login.setOnClickListener(new onClickEvent());
+        person.setOnClickListener(new onClickEvent());
     }
 
     private void init_Me_View(View view) {
         setting_tv=(TextView)view.findViewById(R.id.setting);
         outlogin=(TextView)view.findViewById(R.id.outlogin);
+        myname=(TextView)view.findViewById(R.id.myname);
+        mynum=(TextView)view.findViewById(R.id.mynum);
         message=(ImageView)view.findViewById(R.id.message);
         message2=(ImageView)view.findViewById(R.id.message2);//消息来了时，切换到有消息的view
 
@@ -65,7 +134,8 @@ public class MeFrament extends Fragment{
         friend=(LinearLayout)view.findViewById(R.id.friend);//我的关注
         inviet=(LinearLayout)view.findViewById(R.id.inviet);//邀请好友
 
-        login=(LinearLayout)view.findViewById(R.id.nologin);//登录
+        login=(LinearLayout)view.findViewById(R.id.nologin);//未登录状态
+        person=(LinearLayout)view.findViewById(R.id.person);//登录状态
     }
 
 
@@ -86,9 +156,6 @@ public class MeFrament extends Fragment{
 
             switch (v.getId()){
 
-                case R.id.outlogin:
-                    Toast.makeText(getContext(),"不准退出",Toast.LENGTH_SHORT).show();
-                    break;
                 case R.id.setting:
                     Intent setting_intent=new Intent(getContext(),MeSetting.class);
                     getContext().startActivity(setting_intent);
@@ -107,6 +174,9 @@ public class MeFrament extends Fragment{
                     intent_share.putExtra(Intent.EXTRA_TEXT, "掌空app是一个很好的应用，你可以试试");
                     intent_share.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(Intent.createChooser(intent_share,"掌空app" ));
+                    break;
+                case R.id.person:
+                    Toast.makeText(getContext(),"骚等",Toast.LENGTH_SHORT).show();
                     break;
                 default:
                     Intent intent=new Intent(getContext(),Me_MoreContext.class);
@@ -127,9 +197,9 @@ public class MeFrament extends Fragment{
                             intent.putExtra("content","friend");
                             break;
                         case R.id.nologin:
+                        case R.id.outlogin:
                             intent.putExtra("content","login");
                             break;
-
                     }
                     getContext().startActivity(intent);
 
