@@ -35,6 +35,7 @@ public class MeFrament extends Fragment{
     private TextView setting_tv;
     private TextView outlogin;
     private ImageView message,message2;
+    private ImageView userPhoto;//用户照片
 
     private TextView myname,mynum;
 
@@ -117,6 +118,7 @@ public class MeFrament extends Fragment{
         inviet.setOnClickListener(new onClickEvent());
         login.setOnClickListener(new onClickEvent());
         person.setOnClickListener(new onClickEvent());
+        userPhoto.setOnClickListener(new onClickEvent());
     }
 
     private void init_Me_View(View view) {
@@ -136,6 +138,7 @@ public class MeFrament extends Fragment{
 
         login=(LinearLayout)view.findViewById(R.id.nologin);//未登录状态
         person=(LinearLayout)view.findViewById(R.id.person);//登录状态
+        userPhoto=(ImageView)view.findViewById(R.id.userphoto);
     }
 
 
@@ -175,9 +178,7 @@ public class MeFrament extends Fragment{
                     intent_share.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(Intent.createChooser(intent_share,"掌空app" ));
                     break;
-                case R.id.person:
-                    Toast.makeText(getContext(),"骚等",Toast.LENGTH_SHORT).show();
-                    break;
+
                 default:
                     Intent intent=new Intent(getContext(),Me_MoreContext.class);
                     switch (v.getId()){
@@ -200,6 +201,10 @@ public class MeFrament extends Fragment{
                         case R.id.outlogin:
                             intent.putExtra("content","login");
                             break;
+                        case R.id.person:
+                            intent.putExtra("content","photo");
+                            break;
+
                     }
                     getContext().startActivity(intent);
 

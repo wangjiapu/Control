@@ -13,6 +13,7 @@ import com.example.com.control.Fragments.Fragments_Me.Bill_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Friend_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Login_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Mydesign_Fragment_Me;
+import com.example.com.control.Fragments.Fragments_Me.Photo_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Publish_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Wallet_Fragment_Me;
 
@@ -27,6 +28,7 @@ public class Me_MoreContext extends FragmentActivity {
     private Fragment pfm;
     private Fragment ffm;
     private Fragment lfm;
+    private Fragment phfm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,8 @@ public class Me_MoreContext extends FragmentActivity {
                 break;
             case "login":selectFragment(5);
                 break;
-
+            case "photo":selectFragment(6);
+                break;
 
         }
     }
@@ -113,6 +116,14 @@ public class Me_MoreContext extends FragmentActivity {
                     transaction.show(lfm);
                 }
                 break;
+            case 6:
+                if (phfm == null) {
+                    phfm = new Photo_Fragment_Me();
+                    transaction.add(R.id.form_me_content, phfm);
+                } else {
+                    transaction.show(phfm);
+                }
+                break;
 
         }
        transaction.commit();
@@ -136,6 +147,9 @@ public class Me_MoreContext extends FragmentActivity {
         }
         if(lfm!=null){
             transaction.hide(lfm);
+        }
+        if(phfm!=null){
+            transaction.hide(phfm);
         }
 
     }
