@@ -3,14 +3,18 @@ package com.example.com.control.Fragments.Fragments_Me;
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ContentUris;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -40,6 +44,7 @@ import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by xiyou3g on 2017/5/16.
+ *
  */
 
 public class Photo_Fragment_Me extends Fragment {
@@ -91,14 +96,12 @@ public class Photo_Fragment_Me extends Fragment {
                         @Override
                         public void onClick(View view) {
                             chooseph();
-                            Toast.makeText(getContext(), "选择照片", Toast.LENGTH_SHORT).show();
                         }
                     });
                     takephoto.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             takeph();
-                            Toast.makeText(getContext(), "不拍了", Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -136,10 +139,14 @@ public class Photo_Fragment_Me extends Fragment {
             ActivityCompat.requestPermissions(getActivity(),
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1);
         }else{
-            Intent in=new Intent("android.intent.action.GET_CONTENT");
-            in.setType("image/*");
-            startActivityForResult(in,2);//打开相册
+            openAlbum();
         }
+    }
+
+    private void openAlbum() {
+        Intent in=new Intent("android.intent.action.GET_CONTENT");
+        in.setType("image/*");
+        startActivityForResult(in,2);//打开相册
     }
 
 
@@ -192,11 +199,80 @@ public class Photo_Fragment_Me extends Fragment {
                         handleImageOnKitKat(data);
                     }else{
                         //4.4以下系统使用此方法处理
+                        handleImageBeforeKitKat(data);
                     }
                 }
+                break;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
+        switch (requestCode){
+            case 1:
+                if (grantResults.length>0&& grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    openAlbum();
+                }else{
+                    Toast.makeText(getActivity(),"pppp",Toast.LENGTH_SHORT).show();
+                }
+                break;
+        }
+
+    }
+
+    private void handleImageBeforeKitKat(Intent data) {
+        Uri uri=data.getData();
+        String imagePath=getImagePath(uri,null);
+        displayImage(imagePath);
+    }
+
+    private String getImagePath(Uri uri,String selection){
+        String path=null;
+        //通过uri和selection 来获取真实的图片路径
+        Cursor cursor=getContext().getContentResolver().query(uri,null,selection,null,null);
+        if(cursor!=null){
+            if(cursor.moveToFirst()){
+                path=cursor.getString(cursor.getColumnIndex(MediaStore.Images.Media.DATA));
+            }
+            cursor.close();
+        }
+        return path;
+    }
+
+    private void displayImage(String imagePath) {
+        if (imagePath!=null){
+            Bitmap bitmap=BitmapFactory.decodeFile(imagePath);
+            //设置图片
+            xiangpian.setImageBitmap(bitmap);
+        }else{
+            Toast.makeText(getActivity(),"出错了！！！",Toast.LENGTH_SHORT).show();
         }
     }
 
     private void handleImageOnKitKat(Intent data) {
+        String imagePath=null;
+        Uri uri=data.getData();
+        if(DocumentsContract.isDocumentUri(getActivity(),uri)){
+            //如果是document 类型的Uri,则通过document id处理；
+            String docId=DocumentsContract.getDocumentId(uri);
+            if("com.android.providers.media.documents".equals(uri.getAuthority())){
+                String id=docId.split(":")[1];//解析出数字格式的id
+                String selection=MediaStore.Images.Media._ID+"="+id;
+                imagePath=getImagePath(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,selection);
+            }else if ("com.android.providers.downloads.documents".equals(uri.getAuthority())){
+                Uri contentUri= ContentUris.withAppendedId(Uri.parse("content://downloads/public_downlloads"),Long.valueOf(docId));
+                imagePath=getImagePath(contentUri,null);
+            }
+        }else if ("content".equalsIgnoreCase(uri.getScheme())){
+            //如果是content类型的uri，则使用普通方法处理
+            imagePath=getImagePath(uri,null);
+        }else if("file".equalsIgnoreCase(uri.getScheme())){
+
+            //如果是一般的文件类型uri,那么则直接获取即可
+            imagePath=uri.getPath();
+        }
+        displayImage(imagePath);
     }
+
 }
