@@ -9,4 +9,16 @@
     <color name="label_bg_no">#898888</color>
     <color name="WHITE">#ffffff</color>
     <color name="wu">#e0000000</color>
+
+
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="trantracent">#22000000</color>
+    <color name="trantracent_wode">#55000000</color>
+    <color name="deep_transparent">#bb000000</color>
+    <color name="grey_text_color_normal">#8A8A8A</color>
+    <color name="grey_line_bg">#E4E4E4</color>
+    <color name="original_border_color">#F18459</color>
+    <color name="grey_normal_bg">#EEEEEE</color>
+
 </resources>

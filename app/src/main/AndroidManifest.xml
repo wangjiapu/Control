@@ -27,6 +27,7 @@
         <activity android:name=".MeSetting"/>
         <activity android:name=".Me_MoreContext"/><!--关于我的里面的一些处理事件都将放如次活动解决-->
         <activity android:name=".MainActivity"/>
+        <activity android:name=".HomeGoodsInfoActivity"/><!--商品详细信息活动-->
     </application>
     <!--网络权限-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>

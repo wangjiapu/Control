@@ -1,5 +1,6 @@
 package com.example.com.control.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.com.control.Adapters.HomeRecyclerViewAdapter;
+import com.example.com.control.HomeGoodsInfoActivity;
 import com.example.com.control.R;
 import com.example.com.control.Views.Carousel3DSwitchView;
 import com.example.com.control.bean.Houses;
@@ -90,7 +92,9 @@ public class HomeFrament extends Fragment{
                 OnRecyclerViewItemClickListener() {
             @Override
             public void onItemClick(View view, int pos) {
-                Toast.makeText(getContext(), pos + "", Toast.LENGTH_SHORT).show();
+                Intent i=new Intent(getActivity(),HomeGoodsInfoActivity.class);
+                i.putExtra("data",pos);
+                startActivity(i);
             }
         });
 
