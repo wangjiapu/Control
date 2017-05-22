@@ -48,7 +48,7 @@ import static android.app.Activity.RESULT_OK;
  */
 
 public class Photo_Fragment_Me extends Fragment {
-    private LinearLayout setphoto;
+   // private LinearLayout setphoto;
     private Dialog mDialog;
     private RelativeLayout takephoto;//拍照
     private RelativeLayout choosephoto;//选择照片
@@ -73,11 +73,11 @@ public class Photo_Fragment_Me extends Fragment {
     }
 
     private void initEvent() {
-        setphoto.setOnClickListener(new OnclickEvent());
+        xiangpian.setOnClickListener(new OnclickEvent());
     }
 
     private void initview(View view) {
-        setphoto = (LinearLayout) view.findViewById(R.id.setphoto);
+       // setphoto = (LinearLayout) view.findViewById(R.id.setphoto);
         xiangpian = (ImageView) view.findViewById(R.id.xiangpian);
     }
 
@@ -86,7 +86,7 @@ public class Photo_Fragment_Me extends Fragment {
         @Override
         public void onClick(View view) {
             switch (view.getId()) {
-                case R.id.setphoto:
+                case R.id.xiangpian:
                     mDialog = new Dialog(getActivity(), R.style.ActionSheetDialogStyle);
                     View v = LayoutInflater.from(getContext()).inflate(R.layout.photodialogview, null);
                     takephoto = (RelativeLayout) v.findViewById(R.id.layout_video);

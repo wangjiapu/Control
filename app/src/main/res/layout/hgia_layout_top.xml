@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.com.control.Views.My_Content_ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbars="none">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -73,6 +75,7 @@
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="中层（共12）层 " />
+
                 <TextView
                     style="@style/greyTextStyleSmaller"
                     android:layout_width="wrap_content"
@@ -113,25 +116,6 @@
                 android:text="口碑开发商《鸿丰》开发"
                 android:textSize="@dimen/font_smaller" />
 
-            <!--<TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/spacing_smaller"
-                android:drawableLeft="@drawable/da_ren_services_tick"
-                android:drawablePadding="@dimen/spacing_tiny"
-                android:text="赔运费险"
-                android:textSize="@dimen/font_smaller" />-->
-
-           <!-- <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/spacing_smaller"
-                android:layout_weight="1"
-                android:drawableLeft="@drawable/da_ren_services_tick"
-                android:drawablePadding="@dimen/spacing_tiny"
-                android:text="7天退换"
-                android:textSize="@dimen/font_smaller" />-->
-
             <ImageView
                 android:layout_width="10dp"
                 android:layout_height="10dp"
@@ -139,54 +123,37 @@
                 android:src="@drawable/rightarrow" />
         </LinearLayout>
 
-        <View android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/grey_line_bg"/>
-<!--
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/spacing_small">
-&lt;!&ndash;
-            <TextView
-                style="@style/greyTextStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="包邮" />&ndash;&gt;
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/spacing_large"
-                android:text="满299元或两件包邮"
-                android:textSize="@dimen/font_small" />
-        </LinearLayout>-->
-
-        <View android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/grey_line_bg"/>
+            android:background="@color/grey_line_bg" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/grey_line_bg" />
 
         <RelativeLayout
             android:id="@+id/rl_good_detail_jin"
-            android:padding="@dimen/spacing_small"
-            android:layout_marginTop="@dimen/spacing_tinyer"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_tinyer"
+            android:padding="@dimen/spacing_small">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/spacing_tinyest"
                 android:paddingRight="@dimen/spacing_tinyest"
                 android:text="朝向" />
+
             <ImageView
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:src="@drawable/rightarrow"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/rightarrow" />
         </RelativeLayout>
-
-
 
         <View
             android:layout_width="match_parent"
@@ -194,10 +161,10 @@
             android:background="@color/grey_line_bg" />
 
         <TextView
-            android:background="@drawable/list_gray_item"
             android:id="@+id/tv_good_detail_cate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/list_gray_item"
             android:drawableRight="@drawable/rightarrow"
             android:padding="@dimen/spacing_small"
             android:text="更多参数" />
@@ -224,12 +191,12 @@
                 android:layout_marginTop="@dimen/spacing_smaller"
                 android:orientation="horizontal">
 
-<!--
-                <com.hankkin.library.CircleImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@drawable/user" />
--->
+                <!--
+                                <com.hankkin.library.CircleImageView
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:src="@drawable/user" />
+                -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -299,23 +266,24 @@
                 </LinearLayout>
 
             </LinearLayout>
+
             <TextView
-                android:layout_marginTop="@dimen/spacing_small"
-                android:paddingBottom="@dimen/spacing_tiny"
-                android:paddingTop="@dimen/spacing_tiny"
-                android:paddingRight="@dimen/spacing_smallest"
-                android:paddingLeft="@dimen/spacing_smallest"
-                android:background="@drawable/bg_border_color_primary"
                 android:id="@+id/tv_talent_detail_open"
                 style="@style/colorPrimaryTextStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:background="@drawable/bg_border_color_primary"
+                android:paddingBottom="@dimen/spacing_tiny"
+                android:paddingLeft="@dimen/spacing_smallest"
+                android:paddingRight="@dimen/spacing_smallest"
+                android:paddingTop="@dimen/spacing_tiny"
                 android:text="查看全部评论" />
-           <!-- <com.hankkin.library.NoScrollListView
-                android:id="@+id/nlv_"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />-->
+            <!-- <com.hankkin.library.NoScrollListView
+                 android:id="@+id/nlv_"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content" />-->
         </LinearLayout>
 
         <RelativeLayout
@@ -351,4 +319,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</com.example.com.control.Views.My_Content_ScrollView>

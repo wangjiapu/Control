@@ -3,13 +3,13 @@
     android:background="#ffffff"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ScrollView
+    <com.example.com.control.Views.ScrollView_Parent
         android:id="@+id/sv_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="55dp">
         <include layout="@layout/hgia_layout_top"/>
-    </ScrollView>
+    </com.example.com.control.Views.ScrollView_Parent>
 
     <RelativeLayout
         android:id="@+id/ll_good_detail"
