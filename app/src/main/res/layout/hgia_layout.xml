@@ -4,11 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.example.com.control.Views.ScrollView_Parent
-        android:id="@+id/sv_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:layout_marginBottom="55dp">
+
         <include layout="@layout/hgia_layout_top"/>
+
+        <include layout="@layout/hgia_layout_bottom"/>
+
     </com.example.com.control.Views.ScrollView_Parent>
 
     <RelativeLayout

@@ -7,6 +7,7 @@ import android.widget.ScrollView;
 
 /**
  * Created by xiyou3g on 2017/5/22.
+ *
  */
 
 public class My_Content_ScrollView extends ScrollView {
@@ -33,11 +34,26 @@ public class My_Content_ScrollView extends ScrollView {
         switch (ev.getAction()){
             case MotionEvent.ACTION_MOVE:
                 if(mScrollLister!=null){
+                    int contentHeight=getChildAt(0).getHeight();
+                    int scorllHeight=getHeight();
+                    int scorlly=getScrollY();
+                    mScrollLister.onScroll(scorlly);
 
+                    if (scorlly+scorllHeight>=contentHeight||contentHeight<=scorllHeight){
+                        mScrollLister.onScrollToBottom();
+                    }else{
+                        mScrollLister.notBottom();
+                    }
+                    if (scorlly==0){
+                        mScrollLister.onScrollToTop();
+                    }
                 }
                 break;
         }
-        return false;
+
+        boolean result=super.onTouchEvent(ev);
+        requestDisallowInterceptTouchEvent(false);
+        return result;
     }
 
     interface ScrollLister{
