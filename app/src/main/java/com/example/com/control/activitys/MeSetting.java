@@ -1,4 +1,4 @@
-package com.example.com.control;
+package com.example.com.control.activitys;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.example.com.control.R;
 
 /**
  * Created by 蒲家旺 on 2017/4/13.

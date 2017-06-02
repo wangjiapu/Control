@@ -1,4 +1,4 @@
-package com.example.com.control;
+package com.example.com.control.activitys;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.com.control.R;
 import com.example.com.control.bean.Lists;
 
 /**

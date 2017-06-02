@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".OpenAppActivity">
+        <activity android:name=".activitys.OpenAppActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,10 +24,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"/>
         </provider>
-        <activity android:name=".MeSetting"/>
-        <activity android:name=".Me_MoreContext"/><!--关于我的里面的一些处理事件都将放如次活动解决-->
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".HomeGoodsInfoActivity"/><!--商品详细信息活动-->
+        <activity android:name=".activitys.MeSetting"/>
+        <activity android:name=".activitys.Me_MoreContext"/><!--关于我的里面的一些处理事件都将放如次活动解决-->
+        <activity android:name=".activitys.MainActivity"/>
+        <activity android:name=".activitys.HomeGoodsInfoActivity"/><!--商品详细信息活动-->
     </application>
     <!--网络权限-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>

@@ -1,4 +1,4 @@
-package com.example.com.control;
+package com.example.com.control.activitys;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +16,7 @@ import com.example.com.control.Fragments.DesignFrament;
 import com.example.com.control.Fragments.HomeFrament;
 import com.example.com.control.Fragments.MarketFrament;
 import com.example.com.control.Fragments.MeFrament;
+import com.example.com.control.R;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
