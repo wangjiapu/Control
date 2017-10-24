@@ -1,4 +1,4 @@
-package com.example.com.control;
+package com.example.com.control.activitys;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.com.control.R;
 import com.example.com.control.bean.Lists;
 
 /**

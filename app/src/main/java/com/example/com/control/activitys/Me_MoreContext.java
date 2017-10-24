@@ -1,4 +1,4 @@
-package com.example.com.control;
+package com.example.com.control.activitys;
 
 import android.os.Bundle;
 
@@ -16,6 +16,7 @@ import com.example.com.control.Fragments.Fragments_Me.Mydesign_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Photo_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Publish_Fragment_Me;
 import com.example.com.control.Fragments.Fragments_Me.Wallet_Fragment_Me;
+import com.example.com.control.R;
 
 
 public class Me_MoreContext extends FragmentActivity {

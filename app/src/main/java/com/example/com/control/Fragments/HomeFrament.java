@@ -15,18 +15,13 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.com.control.Adapters.HomeRecyclerViewAdapter;
-import com.example.com.control.HomeGoodsInfoActivity;
+import com.example.com.control.activitys.HomeGoodsInfoActivity;
 import com.example.com.control.R;
 import com.example.com.control.Views.Carousel3DSwitchView;
-import com.example.com.control.bean.Houses;
 import com.example.com.control.bean.Lists;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import static com.example.com.control.bean.Lists.housesList;
 
 /**
  * Created by 蒲家旺 on 2017/4/11.

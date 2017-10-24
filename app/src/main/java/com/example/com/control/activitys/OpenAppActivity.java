@@ -1,4 +1,4 @@
-package com.example.com.control;
+package com.example.com.control.activitys;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -9,13 +9,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.com.control.R;
 import com.example.com.control.Utils.Analysis_data_util;
 import com.example.com.control.Utils.NetworkUtil;
 import com.example.com.control.Utils.OkHttpUtils;
@@ -23,7 +22,6 @@ import com.example.com.control.Utils.OkHttpUtils;
 import java.io.IOException;
 
 import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.Request;
 import okhttp3.Response;
 

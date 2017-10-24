@@ -2,7 +2,6 @@ package com.example.com.control.Fragments;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -20,8 +19,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.com.control.MeSetting;
-import com.example.com.control.Me_MoreContext;
+import com.example.com.control.activitys.MeSetting;
+import com.example.com.control.activitys.Me_MoreContext;
 import com.example.com.control.R;
 
 /**
