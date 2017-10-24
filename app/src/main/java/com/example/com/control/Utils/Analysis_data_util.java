@@ -31,7 +31,13 @@ public class Analysis_data_util {
 
     public static void HomedataAnalysis(String datas,Context context){
         Log.e("HomedataAnalysis","Analysis_data_util");
-        if(datas.equals("")||datas==null){
+        Lists.housesList=new ArrayList<>();
+        for(int i=0;i<30;i++){
+            Houses temp=new Houses();
+            temp.setDescribe("好房子就是我，我就是好房子");
+            Lists.housesList.add(temp);
+        }
+       /* if(datas.equals("")||datas==null){
             //获取失败，
             Lists.housesList=new ArrayList<>();
             Houses temp=new Houses();
@@ -54,6 +60,6 @@ public class Analysis_data_util {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
     }
 }

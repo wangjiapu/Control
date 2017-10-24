@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/iv_good_detai_img"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="300dp"
             android:scaleType="fitXY"
             android:src="@drawable/temp"
             android:visibility="visible" />
@@ -142,6 +142,7 @@
             android:padding="@dimen/spacing_small">
 
             <TextView
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="@dimen/spacing_tinyest"
@@ -191,13 +192,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_smaller"
                 android:orientation="horizontal">
-
-                <!--
-                                <com.hankkin.library.CircleImageView
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:src="@drawable/user" />
-                -->
 
                 <LinearLayout
                     android:layout_width="match_parent"
