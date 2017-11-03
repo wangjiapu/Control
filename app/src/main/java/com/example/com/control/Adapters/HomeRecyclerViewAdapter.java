@@ -36,8 +36,11 @@ public class HomeRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         HomeViewHolder holder1=(HomeViewHolder) holder;
         holder1.home_review_item_tv.setText(mlist.get(position).getDescribe());
-        Glide.with(context).load(mlist.get(position).getHouse_img()).placeholder(R.drawable.temp)
-                .crossFade().into(holder1.home_review_item_img);
+        Glide.with(context)
+                .load(mlist.get(position).getHouse_img())
+                .placeholder(R.drawable.temp)
+                .crossFade()
+                .into(holder1.home_review_item_img);
 
     }
 

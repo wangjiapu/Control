@@ -1,11 +1,5 @@
 package com.example.com.control.bean;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-
-
-
 public class Houses {
     private String house_imgURL;
     private String describe;

@@ -51,7 +51,6 @@ public class MeFrament extends Fragment{
                     break;
             }
         }
-
     };
 
     private BroadcastReceiver mBroadcastReceiver=new BroadcastReceiver(){
